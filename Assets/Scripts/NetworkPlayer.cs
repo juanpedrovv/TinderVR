@@ -35,12 +35,14 @@ public class NetworkPlayer : NetworkBehaviour
 
 		if (!IsOwner) return;
 
-		myXRRig = GameObject.Find("OVRInteraction");
-		if (myXRRig) Debug.Log("Found OVRCameraRig");
-		else Debug.Log("Could not find OVRCameraRig!");
+		myXRRig = GameObject.Find("OVRInteractionComprehensive");
+		if (myXRRig) Debug.Log("Found OVRInteractionComprehensive");
+		else Debug.Log("Could not find OVRInteractionComprehensive!");
 
 		//pointers to the XR RIg
 		RigRef = myXRRig.GetComponent<OVRCameraRigRef>();
+		if (RigRef) Debug.Log("Found OVRCameraRigRef");
+		else Debug.Log("Could not find OVRCameraRigRef!");
 		myXRLC = RigRef.LeftController;
 		myXRRC = RigRef.RightController;
 		myXRCam = RigRef.CameraRig.centerEyeAnchor.transform;
